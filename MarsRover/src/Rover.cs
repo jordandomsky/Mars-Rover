@@ -15,39 +15,23 @@ public class Rover
 
     private void TurnLeft()
     {
-        switch(direction)
+        direction--;
+
+        //If we have turned past north then the rover is facing west
+        if (direction < Direction.N)
         {
-            case Direction.N:
-                direction = Direction.W;
-                break;
-            case Direction.E:
-                direction = Direction.N;
-                break;
-            case Direction.S:
-                direction = Direction.E;
-                break;
-            case Direction.W:
-                direction = Direction.S;
-                break;
+            direction = Direction.W;
         }
     }
 
     private void TurnRight()
     {
-        switch(direction)
+        direction++;
+
+        //If we have turned past west then the rover is facing north
+        if (direction > Direction.W)
         {
-            case Direction.N:
-                direction = Direction.E;
-                break;
-            case Direction.E:
-                direction = Direction.S;
-                break;
-            case Direction.S:
-                direction = Direction.W;
-                break;
-            case Direction.W:
-                direction = Direction.N;
-                break;
+            direction = Direction.N;
         }
     }
 
@@ -107,6 +91,6 @@ public class Rover
 
     public override string ToString()
     {
-        return currentPosition + " " + direction;
+        return String.Format("{0} {1}", currentPosition, direction);
     }
 }

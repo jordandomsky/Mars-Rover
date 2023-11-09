@@ -3,7 +3,7 @@ namespace UnitTests;
 public class PlateauTests
 {
     [Fact]
-    public void ValidPosition()
+    public void ValidPositionReturnTrue()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (1,4);
@@ -12,7 +12,7 @@ public class PlateauTests
     }
 
     [Fact]
-    public void InvalidYPosition()
+    public void InvalidYPositionReturnFalse()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (1,1000);
@@ -21,7 +21,7 @@ public class PlateauTests
     }
     
     [Fact]
-    public void NegativeYPosition()
+    public void NegativeYPositionReturnFalse()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (1,-4);
@@ -30,7 +30,7 @@ public class PlateauTests
     }
 
 [Fact]
-    public void InvalidXPosition()
+    public void InvalidXPositionReturnFalse()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (1000,1);
@@ -39,7 +39,7 @@ public class PlateauTests
     }
     
     [Fact]
-    public void NegativeXPosition()
+    public void NegativeXPositionReturnFalse()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (-1,4);
@@ -48,7 +48,7 @@ public class PlateauTests
     }
 
     [Fact]
-    public void PositionAtZero()
+    public void PositionAtZeroReturnTrue()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (0,0);
@@ -57,7 +57,7 @@ public class PlateauTests
     }
 
     [Fact]
-    public void InvalidBothPosition()
+    public void InvalidBothPositionReturnFalse()
     {
         Plateau p = new Plateau(5, 6);
         Position pos = new Position (-1,305930);
@@ -66,7 +66,7 @@ public class PlateauTests
     }
 
     [Fact]
-    public void NegativePlateau()
+    public void NegativePlateauReturnFalse()
     {
         Plateau p = new Plateau(-5, 6);
         Position pos = new Position (1,3);

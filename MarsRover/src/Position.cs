@@ -11,6 +11,6 @@ public class Position
 
     public override string ToString()
     {
-        return x + " " + y;
+        return String.Format("{0} {1}", x , y);
     }
 }
